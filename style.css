@@ -1,0 +1,40 @@
+html, body {
+  max-width: 600px;
+  margin: 0 auto;
+  font: 18px sans-serif;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+#imageCard {
+  width: 100%;
+  background: #999;
+}
+
+#prevCard, #nextCard {
+  position: fixed;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  background: #666;
+  border: none;
+  opacity: .5;
+}
+
+#prevCard {
+  left: 0;
+}
+
+#nextCard {
+  right: 0;
+}
+
+#commentCount {
+  width: 100%;
+  background: #666;
+  padding: 2em 1em;
+  border: none;
+}

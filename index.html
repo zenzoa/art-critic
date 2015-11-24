@@ -1,10 +1,43 @@
 <!doctype html5>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css">
 
 <title>Art Critic</title>
 
-<div id="ids"></div>
-<div id="images"></div>
+<header>
+  <h1>Art Critic</h1>
+</header>
+
+<main>
+  <div id="imageCard">
+    <!--<button id="prevCard">prev</button>
+    <button id="nextCard">next</button>-->
+    <img id="file" src="" alt="">
+    <h2 id="title"></h2>
+    <div id="meta">
+      <div id="artist"></div>
+      <div id="medium"></div>
+      <div id="year"></div>
+      <div id="more"><a href="">more info</a></div>
+      <div id="price"></div>
+    </div>
+  </div>
+  <button id="commentCount">3 comments</button>
+  <div id="commentCard">
+    <ul id="commentList">
+      <li>Totally awesome!!</li>
+      <li>Blech. Not post-modern enough.</li>
+      <li>(Pst. Look to your right. I'm the one with the appletini.)</li>
+    </ul>
+    <form id="commentForm">
+      <textarea id="commentText"></textarea><br>
+      <button id="submitComment">add comment</button>
+    </form>
+  </div>
+</main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="imagelist.js"></script>
+<script src="hammer.min.js"></script>
+<script src="jquery.hammer.js"></script>
+<script src="artcritic.js"></script>

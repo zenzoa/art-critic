@@ -14,6 +14,10 @@ button {
   font: inherit;
 }
 
+button::-moz-focus-inner {
+  border: 0;
+}
+
 header {
   position: fixed;
   left: 0;

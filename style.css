@@ -12,6 +12,7 @@ body {
 button {
   font-size: inherit;
   font: inherit;
+  outline: none;
 }
 
 button::-moz-focus-inner {

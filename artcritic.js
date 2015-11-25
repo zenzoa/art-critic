@@ -4,24 +4,22 @@
   var artList = [];
   var currentIndex = 0;
 
+
   // Start everything when the page loads.
   $( document ).ready( function() {
     $( "#imageCard" ).show();
     $( "#commentCard" ).hide();
-    $( "img" ).on( "dragstart", function( event ) { event.preventDefault(); });
 
     var options = {
       preventDefault: true
     };
-    $( "#imageCard" ).hammer(options).bind( "dragleft swipeleft", nextCard );
-    $( "#imageCard" ).hammer(options).bind( "dragright swiperight", prevCard );
 
-    // Setup click alternatives to gestures.
+    // Setup click callbacks.
     $( '#prevCard' ).click( prevCard );
     $( '#nextCard' ).click( nextCard );
     $( '#commentCount' ).click( toggleComments );
 
-    getIDs( urlArt, 0, 10 )
+    getIDs( urlArt )
       .then( function( data ) {
         artList = data;
         getArtData( artList[0] )
@@ -30,6 +28,7 @@
   });
 
 
+  // Load previous art card.
   function prevCard() {
     currentIndex --;
     if ( currentIndex < 0 ) {
@@ -40,6 +39,7 @@
   }
 
 
+  // Load next art card.
   function nextCard() {
     currentIndex ++;
     if ( currentIndex >= artList.length ) {
@@ -50,19 +50,27 @@
   }
 
 
+  // Open and close comment section.
   function toggleComments() {
     $( "#imageCard" ).toggle();
     $( "#commentCard" ).toggle();
+    if ( $( "#commentCount" ).hasClass( "closed" ) ) {
+      $( "#commentCount" ).addClass( "open" );
+      $( "#commentCount" ).removeClass("closed");
+    } else {
+      $( "#commentCount" ).addClass( "closed" );
+      $( "#commentCount" ).removeClass("open");
+    }
   }
 
 
   // Fill out the art card with appropriate data.
   function fillArtCard( data ) {
-    $( "#imageCard #file" ).attr( "src", data.thumbnailUrl );
+    //$( "#imageCard #file" ).attr( "src", data.thumbnailUrl
+    $( "#imageCard #imageFile" ).css( "background-image", "url('" + data.thumbnailUrl + "')" );
     $( "#imageCard #title" ).html( data.title );
     $( "#imageCard #artist" ).html( data.artist );
     $( "#imageCard #year" ).html( data.year );
-    $( "#imageCard #medium" ).html( data.medium );
     $( "#imageCard #more a" ).attr( "href", data.url );
     $( "#imageCard #price" ).html( '$' + data.id );
   }

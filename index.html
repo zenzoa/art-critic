@@ -1,6 +1,7 @@
 <!doctype html5>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="style.css">
 
 <title>Art Critic</title>
@@ -11,19 +12,18 @@
 
 <main>
   <div id="imageCard">
-    <!--<button id="prevCard">prev</button>
-    <button id="nextCard">next</button>-->
-    <img id="file" src="" alt="">
-    <h2 id="title"></h2>
+    <button id="prevCard">&#10096;</button>
+    <button id="nextCard">&#10097;</button>
+    <div id="imageFile"></div>
     <div id="meta">
+      <h2 id="title"></h2>
       <div id="artist"></div>
-      <div id="medium"></div>
       <div id="year"></div>
-      <div id="more"><a href="">more info</a></div>
+      <div id="more"><a href="">more</a></div>
       <div id="price"></div>
     </div>
   </div>
-  <button id="commentCount">3 comments</button>
+  <button id="commentCount" class="closed">3 comments</button>
   <div id="commentCard">
     <ul id="commentList">
       <li>Totally awesome!!</li>
@@ -38,6 +38,4 @@
 </main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="hammer.min.js"></script>
-<script src="jquery.hammer.js"></script>
 <script src="artcritic.js"></script>

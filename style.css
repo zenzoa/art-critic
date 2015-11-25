@@ -9,15 +9,8 @@ body {
   margin-top: 3em;
 }
 
-button {
-  font-size: inherit;
-  font: inherit;
-  outline: none;
-}
 
-button::-moz-focus-inner {
-  border: 0;
-}
+/* HEADER */
 
 header {
   position: fixed;
@@ -38,6 +31,9 @@ h1 {
   letter-spacing: .8em;
   margin-top: 1em;
 }
+
+
+/* IMAGE CARD */
 
 #imageCard {
   width: 100%;
@@ -92,6 +88,9 @@ h1 {
   padding: .2em .5em;
 }
 
+
+/* NEXT / PREV BUTTONS */
+
 #prevCard, #nextCard {
   position: fixed;
   top: 0;
@@ -111,6 +110,22 @@ h1 {
 #nextCard {
   right: 0;
 }
+
+
+/* BUTTONS */
+
+button {
+  font-size: inherit;
+  font: inherit;
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+
+/* COMMENTS */
 
 #commentCount {
   position: fixed;
